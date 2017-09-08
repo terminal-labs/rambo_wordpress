@@ -28,6 +28,7 @@ base:
     - mysql
     # - postgresql              {# requires {{ grains['dvcs'] }}.repo #}
     # - conf
+    - wordpress
     # - django
     # - supervisord
     # - hadoop.ambari
