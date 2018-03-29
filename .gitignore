@@ -21,3 +21,4 @@ aws.env.sh
 srv/salt/ssh_keys/**
 .tmp/**
 keys/**
+.rambo-tmp
