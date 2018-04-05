@@ -1,4 +1,6 @@
-ngingx_conf:
+#!stateconf yaml . jinja
+
+.ngingx_conf:
   file.managed:
     - name: /etc/nginx/sites-enabled/nginx.conf
     - source: salt:///nginx/wordpress_nginx.conf.template
@@ -6,7 +8,7 @@ ngingx_conf:
 /etc/nginx/sites-enabled/default:
   file.absent
 
-nginx_restart:
+.nginx_restart:
   module.run:
     - name: service.restart
     - m_name: nginx

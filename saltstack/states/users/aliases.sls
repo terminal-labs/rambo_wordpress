@@ -1,4 +1,6 @@
-add_alias_emacsclient:
+#!stateconf yaml . jinja
+
+.add_alias_emacsclient:
   cmd.run:
     - name: echo "alias emacs='emacsclient -a \"\" -t'" >> .bash_aliases
     - cwd: /home/{{ grains['deescalated_user'] }}

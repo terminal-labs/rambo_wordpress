@@ -1,4 +1,6 @@
-nginx_install:
+#!stateconf yaml . jinja
+
+.nginx_install:
   pkg.installed:
     - name: nginx-full
   service.running:

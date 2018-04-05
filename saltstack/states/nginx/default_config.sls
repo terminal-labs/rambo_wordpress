@@ -1,4 +1,6 @@
-nging_conf:
+#!stateconf yaml . jinja
+
+.nging_conf:
   file.managed:
     - name: /home/{{ grains['deescalated_user'] }}/{{ grains['project'] }}/nginx.conf
     - require:
@@ -8,7 +10,7 @@ nging_conf:
     - user: {{ grains['deescalated_user'] }}
     - group: {{ grains['deescalated_user'] }}
 
-nginx_symlink:
+.nginx_symlink:
   file.symlink:
     - name: /etc/nginx/sites-enabled/nginx.conf
     - target: /home/{{ grains['deescalated_user'] }}/{{ grains['project'] }}/nginx.conf
@@ -16,7 +18,7 @@ nginx_symlink:
 /etc/nginx/sites-enabled/default:
   file.absent
 
-nginx_restart:
+.nginx_restart:
   module.run:
     - name: service.restart
     - m_name: nginx

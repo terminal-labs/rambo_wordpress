@@ -1,4 +1,6 @@
-hg_add_host_fingerprint:
+#!stateconf yaml . jinja
+
+.hg_add_host_fingerprint:
   ssh_known_hosts:
     - name: {{ grains['repo_host'] }}
     - present
