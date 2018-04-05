@@ -1,24 +1,24 @@
 creat_db_for_wordpress:
   cmd.run:
-    - name: mysql -u root -e "CREATE DATABASE wordpress"
+    - name: sudo mysql -u root -e "CREATE DATABASE wordpress"
     - cwd: /home/{{ grains['deescalated_user'] }}
     - runas: {{ grains['deescalated_user'] }}
 
 creat_db_user_wordpress:
   cmd.run:
-    - name: mysql -u root -e "CREATE USER wordpressuser@localhost IDENTIFIED BY 'password'"
+    - name: sudo mysql -u root -e "CREATE USER wordpressuser@localhost IDENTIFIED BY 'password'"
     - cwd: /home/{{ grains['deescalated_user'] }}
     - runas: {{ grains['deescalated_user'] }}
 
 grant_db_privileges:
   cmd.run:
-    - name: mysql -u root -e "GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost"
+    - name: sudo mysql -u root -e "GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost"
     - cwd: /home/{{ grains['deescalated_user'] }}
     - runas: {{ grains['deescalated_user'] }}
 
 flush_db_privileges:
   cmd.run:
-    - name: mysql -u root -e "FLUSH PRIVILEGES"
+    - name: sudo mysql -u root -e "FLUSH PRIVILEGES"
     - cwd: /home/{{ grains['deescalated_user'] }}
     - runas: {{ grains['deescalated_user'] }}
 
