@@ -39,7 +39,7 @@
 .place_wordpress:
   file.managed:
     - name: /home/{{ grains['deescalated_user'] }}/wordpress/wp-config.php
-    - source: salt:///wordpress/wp-config.php.template
+    - source: salt://nodes/wordpress/wp-config.php.template
 
 .move_wordpress:
   cmd.run:

@@ -18,7 +18,7 @@
 .place_php_ini_file:
   file.managed:
     - name: /etc/php/7.0/fpm/php.ini
-    - source: salt://php/php.ini.template
+    - source: salt://nodes/php/php.ini.template
     - user: {{ grains['deescalated_user'] }}
     - group: {{ grains['deescalated_user'] }}
 
@@ -29,9 +29,9 @@
 .php_index_file:
   file.managed:
     - name: /var/www/html/index.php
-    - source: salt:///php/index.php.template
+    - source: salt://nodes/php/index.php.template
 
 .php_info_file:
   file.managed:
     - name: /var/www/html/info.php
-    - source: salt:///php/info.php.template
+    - source: salt://nodes/php/info.php.template
