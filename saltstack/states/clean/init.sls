@@ -1,6 +1,6 @@
 #!stateconf yaml . jinja
 
-delete_{{ grains['project'] }}:
+.delete_project:
   file.absent:
     - name: /home/{{ grains['deescalated_user'] }}/{{ grains['project'] }}
 

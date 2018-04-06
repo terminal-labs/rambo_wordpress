@@ -1,7 +1,8 @@
 #!stateconf yaml . jinja
 
-{{ grains['deescalated_user'] }}:
+.create_deescalated_user:
   user.present:
+    - name: {{ grains['deescalated_user'] }}
     - home: /home/{{ grains['deescalated_user'] }}
     - fullname: {{ grains['deescalated_user'] }}
     - shell: /bin/bash
@@ -11,4 +12,3 @@
     - name: sed -i 's/^#force_color_prompt/force_color_prompt/g' .bashrc; sed -i 's/^\s*#alias grep/    alias grep/g' .bashrc
     - cwd: /home/{{ grains['deescalated_user'] }}
     - runas: {{ grains['deescalated_user'] }}
-

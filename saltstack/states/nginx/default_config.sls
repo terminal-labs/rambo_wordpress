@@ -15,8 +15,9 @@
     - name: /etc/nginx/sites-enabled/nginx.conf
     - target: /home/{{ grains['deescalated_user'] }}/{{ grains['project'] }}/nginx.conf
 
-/etc/nginx/sites-enabled/default:
-  file.absent
+remove_nginx_sites_enabled_default:
+  file.absent:
+    - name: /etc/nginx/sites-enabled/default
 
 .nginx_restart:
   module.run:

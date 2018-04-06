@@ -5,8 +5,9 @@
     - name: /etc/nginx/sites-enabled/nginx.conf
     - source: salt:///nginx/wordpress_nginx.conf.template
 
-/etc/nginx/sites-enabled/default:
-  file.absent
+.remove_default_nginx_config:
+  file.absent:
+    - name: /etc/nginx/sites-enabled/default
 
 .nginx_restart:
   module.run:
