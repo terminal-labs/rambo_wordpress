@@ -1,12 +1,12 @@
 #!stateconf yaml . jinja
 
-.creat_db_for_wordpress:
+.create_db_for_wordpress:
   cmd.run:
     - name: sudo mysql -u root -e "CREATE DATABASE wordpress"
     - cwd: /home/{{ grains['deescalated_user'] }}
     - runas: {{ grains['deescalated_user'] }}
 
-.creat_db_user_wordpress:
+.create_db_user_wordpress:
   cmd.run:
     - name: sudo mysql -u root -e "CREATE USER wordpressuser@localhost IDENTIFIED BY 'password'"
     - cwd: /home/{{ grains['deescalated_user'] }}
