@@ -14,4 +14,4 @@ download_python_environment_manager:
 	fi
 
 rambobox: download_python_environment_manager
-	@sudo bash create.sh $(SUDO_USER)
+	@sudo bash .tmp/python-environment-manager-master/makefile_resources/scripts_rambo/build.sh $(SUDO_USER) vagrant
