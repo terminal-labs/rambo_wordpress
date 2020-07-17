@@ -1,3 +1,4 @@
 base:
-  '*':
-    - basebox
+  'roles:project':
+    - match: grain
+    - nodes
