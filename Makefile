@@ -12,3 +12,4 @@ download_bash_environment_manager:
 
 rambobox: download_bash_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/build.sh $(APPNAME) $(SUDO_USER) vagrant
+	@sudo bash .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/emit_activation_script.sh $(APPNAME) $(SUDO_USER)
