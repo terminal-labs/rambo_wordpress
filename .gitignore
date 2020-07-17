@@ -22,3 +22,4 @@ srv/salt/ssh_keys/**
 .tmp/**
 keys/**
 .rambo-tmp
+saltstack/etc
